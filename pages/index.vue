@@ -21,17 +21,17 @@ const features = [
 const testimonials = [
   {
     name: 'Linda',
-    avatar: '/testimonials/linda.png',
+    avatar: '/testimonials/linda_new.webp',
     comment: 'I have been using Vue for a while and understand it pretty well, I have been looking at how to get into Nuxt. I\'m not disappointed that I chose this website, I have learned a ton.'
   },
   {
     name: 'Abel',
-    avatar: '/testimonials/abel.png',
+    avatar: '/testimonials/abel_new.webp',
     comment: 'I recently finished a great vanilla JavaScript course and decided to make Nuxt my first framework-based skill in JS. I am not through the course yet but so far so good!'
   },
   {
     name: 'Claire',
-    avatar: '/testimonials/claire.png',
+    avatar: '/testimonials/claire_new.webp',
     comment: 'I\'m relatively new to web development, but I am a fast learner especially if the teaching is concise. I was relieved about how fluent I could understand this content.'
   }
 ]
@@ -45,9 +45,9 @@ const testimonials = [
           Learn <span class="text-colorful">modern Nuxt</span> from beginner to advanced
         </h1>
         <p class=" leading-normal text-lg font-medium mb-10">
-          This course / reference dives deep into Nuxt, starting at the beginning. 
-          It is continuously updated and jam packed with theory, tutorials, 
-          examples and interactive projects. Whether you read it front to back or 
+          This course / reference dives deep into Nuxt, starting at the beginning.
+          It is continuously updated and jam packed with theory, tutorials,
+          examples and interactive projects. Whether you read it front to back or
           just use it as a reference, it's sure to improve your Nuxt skills.
         </p>
         <button
@@ -58,7 +58,7 @@ const testimonials = [
         </button>
       </section>
 
-      <section class="my-24 max-w-7xl grid gap-10 grid-cols-1 lg:grid-cols-3 px-10">
+      <section class="my-28 max-w-7xl mx-auto grid gap-10 grid-cols-1 lg:grid-cols-3 px-10">
         <div
           v-for="feature in features"
           :key="feature.title"
@@ -71,6 +71,15 @@ const testimonials = [
             {{ feature.body }}
           </p>
         </div>
+
+        <p>
+          View the <nuxt-link
+            class="text-[var(--gradient-color-1)]"
+            to="/outline"
+          >
+            course outline &rarr;
+          </nuxt-link>
+        </p>
       </section>
 
       <section class="my-20">
@@ -87,10 +96,10 @@ const testimonials = [
             <div class="flex items-center justify-center gap-5 w-80 max-h-60 overflow-hidden">
               <img
                 width="64"
-                height="64"
+                height="61"
                 :src="testimonial.avatar"
                 :alt="testimonial.name + '\'s avatar'"
-                class="rounded-full"
+                class="rounded-[50%]"
               >
               <p>
                 {{ testimonial.comment }}

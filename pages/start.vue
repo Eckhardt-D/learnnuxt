@@ -27,7 +27,7 @@ const email = ref("");
       <input
         v-model="email"
         placeholder="Your email address"
-        class="w-full text-black py-2 px-4 h-16 rounded flex-grow mt-1"
+        class="w-full text-black py-2 px-4 h-16 rounded-lg flex-grow mt-0.5"
         type="email"
       >
       <button class="btn-colorful w-full sm:w-[144px]">
