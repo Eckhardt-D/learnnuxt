@@ -1,3 +1,4 @@
+import { readBodySafe } from "../util";
 import { applicationDefault } from "firebase-admin/app";
 import { z } from "zod";
 
@@ -21,8 +22,7 @@ export default defineEventHandler(async (event) => {
     });
 
   const db = getFirestore(app);
-
-  const body = await readBody(event);
+  const body = await readBodySafe(event);
 
   try {
     const { email } = earlyBirdSchema.parse(body);

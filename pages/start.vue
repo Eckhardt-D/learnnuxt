@@ -30,12 +30,17 @@ const registerForm = ref<null | HTMLFormElement>(null);
 const register = async () => {
   if (registerForm.value?.checkValidity()) {
     loading.value = true;
-    const response = await $fetch("/api/earlybird", {
+    const response = await fetch("/api/earlybird", {
       method: "POST",
+      headers: {
+        'content-type': 'application/json'
+      },
       body: JSON.stringify({
         email: email.value,
       })
-    }).catch((error) => {
+    })
+    .then(response => response.json())
+    .catch((error) => {
       return {
         data: null,
         error: {
