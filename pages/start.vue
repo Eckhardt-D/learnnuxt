@@ -32,9 +32,9 @@ const register = async () => {
     loading.value = true;
     const response = await $fetch("/api/earlybird", {
       method: "POST",
-      body: {
+      body: JSON.stringify({
         email: email.value,
-      }
+      })
     }).catch((error) => {
       return {
         data: null,
