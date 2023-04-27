@@ -27,4 +27,16 @@ export default defineNuxtConfig({
       tailwindcss: {},
     },
   },
+  /**
+   * Keep a function warm for incoming requests to reduce cold starts a bit
+   * @see https://firebase.google.com/docs/functions/manage-functions#min-max-instances
+   * @see https://github.com/unjs/nitro/issues/90#issuecomment-1430548908
+   */
+  nitro: {
+    preset: "firebase",
+    replace: {
+      "functions.https.onRequest":
+        "functions.runWith({ minInstances: 1 }).https.onRequest",
+    },
+  },
 });
