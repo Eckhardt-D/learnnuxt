@@ -3,7 +3,7 @@
   "scripts": {
     "lint": "eslint",
     "build": "NITRO_PRESET=firebase nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --dotenv .env.local",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
@@ -22,5 +22,8 @@
     "nuxt": "^3.4.2",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "zod": "^3.21.4"
   }
 }

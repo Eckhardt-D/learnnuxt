@@ -21,6 +21,9 @@ const outline = [
       },
       {
         title: "Auto imports"
+      },
+      {
+        title: "Runtime Config and .env"
       }
     ]
   },
@@ -365,6 +368,26 @@ const outline = [
     ]
   },
   {
+    title: "Preparing your app for production",
+    children: [
+      {
+        title: "Self-hosted solutions with PM2"
+      },
+      {
+        title: "Optimizing for Firebase"
+      },
+      {
+        title: "Image optimizations"
+      },
+      {
+        title: "Font optimizations for CLS"
+      },
+      {
+        title: "Scripts and CSS"
+      }
+    ]
+  },
+  {
     title: "Advanced topic - Modules",
     children: [
       {
@@ -403,7 +426,7 @@ const outline = [
     ]
   },
   {
-    title: "There will be more..."
+    title: "And much more..."
   }
 ]
 </script>

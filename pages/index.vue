@@ -111,7 +111,8 @@ const testimonials = [
       </section>
 
       <section class="mt-14 mb-20 text-center">
-        <p>
+        <!-- For later -->
+        <p v-if="false">
           Are you busy with the course and wouldn't mind taking a second to leave a testimonial? <a
             class="text-[var(--gradient-color-1)] und
           "

@@ -27,6 +27,9 @@ export default defineNuxtConfig({
       tailwindcss: {},
     },
   },
+  runtimeConfig: {
+    serviceAccountPath: process.env.SERVICE_ACCOUNT_PATH,
+  },
   /**
    * Keep a function warm for incoming requests to reduce cold starts a bit
    * @see https://firebase.google.com/docs/functions/manage-functions#min-max-instances

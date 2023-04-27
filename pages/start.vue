@@ -4,6 +4,58 @@ definePageMeta({
 })
 
 const email = ref("");
+const loading = ref(false);
+const error = ref<string | null>(null);
+const success = ref(false);
+
+watchEffect((onCleanup) => {
+  let timeout: NodeJS.Timeout | undefined;
+
+  if (error.value || success.value) {
+    timeout = setTimeout(() => {
+      error.value = null;
+      success.value = false;
+    }, 3000)
+  }
+
+  onCleanup(() => {
+    if (timeout) {
+      clearTimeout(timeout)
+    }
+  })
+})
+
+const registerForm = ref<null | HTMLFormElement>(null);
+
+const register = async () => {
+  if (registerForm.value?.checkValidity()) {
+    loading.value = true;
+    const response = await $fetch("/api/earlybird", {
+      method: "POST",
+      body: {
+        email: email.value,
+      }
+    }).catch((error) => {
+      return {
+        data: null,
+        error: {
+          reason: (error as Error).message,
+          message: 'Could not register your email, please try again.'
+        }
+      }
+    })
+
+    if (response.data?.success) {
+      email.value = '';
+      success.value = true;
+      loading.value = false;
+      return;
+    }
+
+    error.value = response.error?.message ?? null;
+    loading.value = false;
+  }
+}
 </script>
 
 <template>
@@ -21,6 +73,7 @@ const email = ref("");
       Sign up to get notified
     </h2>
     <form
+      ref="registerForm"
       class="flex flex-col sm:flex-row items-center justify-between gap-2 max-w-[500px]"
       @submit.prevent
     >
@@ -28,11 +81,30 @@ const email = ref("");
         v-model="email"
         placeholder="Your email address"
         class="w-full text-black py-2 px-4 h-16 rounded-lg flex-grow mt-0.5"
+        :class="error && 'border-red-500'"
         type="email"
+        required
       >
-      <button class="btn-colorful w-full sm:w-[144px]">
-        Sign up
+      <button
+        class="btn-colorful w-full sm:w-[144px]"
+        :class="loading && '!bg-gray-700'"
+        :disabled="loading"
+        @click="register"
+      >
+        {{ loading ? 'Loading..' :'Sign up' }}
       </button>
     </form>
+    <p
+      v-if="error"
+      class="text-red-400 mt-2"
+    >
+      {{ error }}
+    </p>
+    <p
+      v-if="success"
+      class="text-green-400 mt-2"
+    >
+      Success! You can expect an email as soon as the course launches 🚀
+    </p>
   </div>
 </template>
