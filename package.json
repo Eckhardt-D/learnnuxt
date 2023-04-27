@@ -7,6 +7,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
+  "engines": {
+    "node": "18"
+  },
   "devDependencies": {
     "@heroicons/vue": "^2.0.17",
     "@nuxt/content": "^2.6.0",

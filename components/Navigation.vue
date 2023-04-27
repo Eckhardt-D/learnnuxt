@@ -4,7 +4,15 @@ const menuOpen = ref(false);
 </script>
 
 <template>
-  <header class="h-[120px] flex items-center justify-end px-[25px] sm:px-[60px]">
+  <header class="h-[120px] flex items-center justify-between px-[25px] sm:px-[60px]">
+    <nuxt-link to="/">
+      <img
+        width="50"
+        height="50"
+        src="/icons/LearnNuxt.svg"
+        alt="Learn Nuxt Icon"
+      >
+    </nuxt-link>
     <ul class="hidden sm:flex items-center gap-10 ">
       <li v-if="$route.path !== '/'">
         <nuxt-link
@@ -60,6 +68,12 @@ const menuOpen = ref(false);
       <ul
         class="flex flex-col gap-10 items-center pt-20 p-5"
       >
+        <img
+          width="50"
+          height="50"
+          src="/icons/LearnNuxt.svg"
+          alt="Learn Nuxt Icon"
+        >
         <li v-if="$route.path !== '/'">
           <nuxt-link
             to="/"
