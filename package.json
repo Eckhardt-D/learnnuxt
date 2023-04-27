@@ -3,6 +3,7 @@
   "scripts": {
     "lint": "eslint",
     "build": "NITRO_PRESET=firebase nuxt build",
+    "deploy": "pnpm run build && firebase deploy",
     "dev": "nuxt dev --dotenv .env.local",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
