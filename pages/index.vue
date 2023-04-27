@@ -50,7 +50,10 @@ const testimonials = [
           examples and interactive projects. Whether you read it front to back or 
           just use it as a reference, it's sure to improve your Nuxt skills.
         </p>
-        <button class="btn-colorful mx-auto">
+        <button
+          class="btn-colorful mx-auto"
+          @click="$router.push('/start')"
+        >
           Start learning &rarr;
         </button>
       </section>
@@ -112,15 +115,13 @@ const testimonials = [
         <h1 class="text-5xl md:text-7xl text-center font-bold">
           Get started <span class="text-colorful">today</span>
         </h1>
-        <button class="btn-colorful mx-auto mt-10">
+        <button
+          class="btn-colorful mx-auto mt-10"
+          @click="$router.push('/start')"
+        >
           Start learning &rarr;
         </button>
       </section>
-      <hr class="my-10 text-gray-700">
-
-      <footer class="pb-10 text-sm">
-        Made with 💜 by <a href="https://github.com/Eckhardt-D">Eckhardt</a> in 🇳🇦
-      </footer>
     </div>
   </main>
 </template>

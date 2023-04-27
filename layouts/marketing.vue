@@ -2,6 +2,7 @@
   <main>
     <Navigation />
     <slot />
+    <Footer v-once />
   </main>
 </template>
 

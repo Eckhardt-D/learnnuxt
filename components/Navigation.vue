@@ -36,7 +36,7 @@ const menuOpen = ref(false);
       </li>
       <li class="border py-2 px-5 rounded border-[var(--gradient-color-1)] font-bold">
         <nuxt-link
-          to="/auth"
+          to="/start"
         >
           Login
         </nuxt-link>
@@ -94,7 +94,7 @@ const menuOpen = ref(false);
         </li>
         <li class="border py-2 px-5 rounded border-[var(--gradient-color-1)] font-bold">
           <nuxt-link
-            to="/auth"
+            to="/start"
             @click="menuOpen=false"
           >
             Login

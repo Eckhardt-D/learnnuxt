@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint",
-    "build": "nuxt build",
+    "build": "NITRO_PRESET=firebase nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
@@ -14,6 +14,8 @@
     "@nuxtjs/fontaine": "^0.2.5",
     "@types/node": "^18.15.12",
     "autoprefixer": "^10.4.14",
+    "firebase-admin": "^11.7.0",
+    "firebase-functions": "^4.3.1",
     "nuxt": "^3.4.2",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.2"
