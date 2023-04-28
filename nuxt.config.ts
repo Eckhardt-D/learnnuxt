@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "shortcut icon",
-          href: "/images/LearnNuxt.svg",
+          href: "/icons/LearnNuxt.svg",
           type: "image/svg+xml",
         },
       ],
