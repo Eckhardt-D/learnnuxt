@@ -51,11 +51,17 @@ const testimonials = [
           just use it as a reference, it's sure to improve your Nuxt skills.
         </p>
         <button
-          class="btn-colorful mx-auto"
+          class="btn-colorful mx-auto mb-5"
           @click="$router.push('/start')"
         >
           Start learning &rarr;
         </button>
+        <nuxt-link
+          to="/free/introduction/setting-up-your-computer"
+          class="text-sm mx-auto"
+        >
+          Free samples
+        </nuxt-link>
       </section>
 
       <section class="my-28 max-w-7xl mx-auto grid gap-10 grid-cols-1 lg:grid-cols-3 px-10">

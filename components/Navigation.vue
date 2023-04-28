@@ -13,7 +13,7 @@ const menuOpen = ref(false);
         alt="Learn Nuxt Icon"
       >
     </nuxt-link>
-    <ul class="hidden sm:flex items-center gap-10 ">
+    <ul class="hidden md:flex items-center gap-10 ">
       <li v-if="$route.path !== '/'">
         <nuxt-link
           to="/"
@@ -52,13 +52,13 @@ const menuOpen = ref(false);
     </ul>
 
     <Bars3Icon
-      class="sm:hidden w-6 h-6"
+      class="md:hidden w-6 h-6"
       @click="menuOpen = !menuOpen"
     />
 
     <div
       v-if="menuOpen"
-      class="sm:hidden bg-slate-800 fixed inset-0 z-10"
+      class="md:hidden bg-slate-800 fixed inset-0 z-10"
       role="mobilemenu"
     >
       <XMarkIcon

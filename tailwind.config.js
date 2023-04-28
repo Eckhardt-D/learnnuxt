@@ -6,5 +6,8 @@ module.exports = {
     "./components/**/*.vue",
     "./context/guide/**/*.md",
   ],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ]
 }
 

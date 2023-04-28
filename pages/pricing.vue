@@ -84,6 +84,13 @@ const includedFeatures = [
           </div>
         </div>
       </div>
+
+      <p class="mt-4">If you need some convincing, check out the <nuxt-link
+        class="text-[var(--gradient-color-1)]"
+        to="/free/introduction/setting-up-your-computer"
+      >
+        free samples &rarr;
+      </nuxt-link></p>
     </div>
   </div>
 </template>

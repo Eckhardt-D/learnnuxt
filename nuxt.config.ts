@@ -1,6 +1,6 @@
+import { resolve } from "path";
+
 export default defineNuxtConfig({
-  modules: ["@nuxt/content", "@nuxtjs/fontaine"],
-  css: ["~/assets/fonts.css", "~/assets/tailwind.css"],
   app: {
     head: {
       htmlAttrs: {
@@ -37,6 +37,27 @@ export default defineNuxtConfig({
       ],
     },
   },
+  content: {
+    highlight: {
+      preload: ["javascript", "typescript", "vue", "bash"],
+      theme: {
+        default: "github-dark",
+      },
+    },
+    sources: {
+      learn: {
+        prefix: "/learn",
+        driver: "fs",
+        base: resolve(__dirname, "content-paid"),
+      },
+      free: {
+        prefix: "/free",
+        driver: "fs",
+        base: resolve(__dirname, "content-free"),
+      },
+    },
+  },
+  css: ["~/assets/tailwind.css", "~/assets/fonts.css"],
   fontMetrics: {
     fonts: [
       {
@@ -46,6 +67,7 @@ export default defineNuxtConfig({
       },
     ],
   },
+  modules: ["@nuxt/content", "@nuxtjs/fontaine"],
   postcss: {
     plugins: {
       autoprefixer: {},

@@ -11,7 +11,7 @@ const outline = [
         title: "Setting up your computer"
       },
       {
-        title: "Starting a new Nuxt project"
+        title: "Creating a new Nuxt project"
       },
       {
         title: "Starting a Nuxt project from a template"
