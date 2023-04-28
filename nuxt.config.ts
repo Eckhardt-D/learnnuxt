@@ -3,11 +3,21 @@ export default defineNuxtConfig({
   css: ["~/assets/fonts.css", "~/assets/tailwind.css"],
   app: {
     head: {
+      htmlAttrs: {
+        lang: "en",
+      },
       meta: [
         {
           name: "keywords",
           content:
             "Nuxt, Nuxt.js, Nuxt3, Nuxt 3, Learn Nuxt, Learn Nuxt 3, Nuxt tutorial, Nuxt 3 tutorial, Nuxt modules, Nuxt data fetching, Nuxt SEO, Nuxt.js, Vue, Vue.js, Vue tutorial, Nuxt course",
+        },
+      ],
+      link: [
+        {
+          rel: "shortcut icon",
+          href: "/images/LearnNuxt.svg",
+          type: "image/svg+xml",
         },
       ],
     },
