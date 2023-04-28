@@ -20,6 +20,21 @@ export default defineNuxtConfig({
           type: "image/svg+xml",
         },
       ],
+      script: [
+        {
+          src: "/js/um.js",
+          defer: true,
+        },
+        {
+          src: "https://t.usermaven.com/lib.js",
+          "data-key": "UM87fyjQWD",
+          "data-tracking-host": "https://events.usermaven.com",
+          "data-autocapture": "true",
+          "data-privacy-policy": "strict",
+          defer: true,
+          async: true,
+        },
+      ],
     },
   },
   fontMetrics: {

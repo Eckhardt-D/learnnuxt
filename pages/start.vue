@@ -51,6 +51,9 @@ const register = async () => {
     })
 
     if (response.data?.success) {
+      window.usermaven("track", "earlybird_signup", {
+        email: email.value,
+      });
       email.value = '';
       success.value = true;
       loading.value = false;
