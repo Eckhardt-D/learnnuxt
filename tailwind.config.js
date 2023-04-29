@@ -8,6 +8,11 @@ module.exports = {
   ],
   plugins: [
     require('@tailwindcss/typography'),
-  ]
+  ],
+  theme: {
+    fontFamily: {
+      'sans': ['Roboto\\ Condensed', 'Roboto\\ Condensed\\ override'],
+    }
+  }
 }
 

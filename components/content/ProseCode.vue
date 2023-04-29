@@ -12,7 +12,7 @@ withDefaults(
 </script>
 
 <template>
-  <div class="leading-normal bg-slate-900 border border-opacity-10 py-5 px-7 rounded-lg shadow not-prose min-w-fit max-w-4xl">
+  <div class="leading-normal bg-slate-900 border border-opacity-10 py-5 px-7 rounded-lg shadow not-prose">
     <div class="flex items-center justify-between">
       <p class="text-gray-400 font-bold">
         {{ filename || '' }}
@@ -20,7 +20,7 @@ withDefaults(
       <DocumentDuplicateIcon class="text-gray-400 w-6 h-5" />
     </div>
     <hr class="border-gray-800 my-5">
-    <div class="py-3 text-sm leading-loose">
+    <div class="py-3 text-sm leading-loose overflow-x-scroll invisible-scroll">
 
       <slot />
     </div>

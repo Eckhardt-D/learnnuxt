@@ -58,16 +58,7 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/tailwind.css", "~/assets/fonts.css"],
-  fontMetrics: {
-    fonts: [
-      {
-        family: "Roboto Condensed",
-        fallbacks: ["Zapfino"],
-        overrideName: "fallback-a",
-      },
-    ],
-  },
-  modules: ["@nuxt/content", "@nuxtjs/fontaine"],
+  modules: ["@nuxt/content"],
   postcss: {
     plugins: {
       autoprefixer: {},
@@ -75,18 +66,8 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    serviceAccountPath: process.env.SERVICE_ACCOUNT_PATH,
-  },
-  /**
-   * Keep a function warm for incoming requests to reduce cold starts a bit
-   * @see https://firebase.google.com/docs/functions/manage-functions#min-max-instances
-   * @see https://github.com/unjs/nitro/issues/90#issuecomment-1430548908
-   */
-  nitro: {
-    preset: "firebase",
-    replace: {
-      "functions.https.onRequest":
-        "functions.runWith({ minInstances: 1 }).https.onRequest",
+    public: {
+      isDevelopment: process.env.APP_ENV === "dev",
     },
   },
 });

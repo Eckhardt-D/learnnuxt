@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "PORT=4000 APP_ENV=dev npx nitropack dev --dotenv .env.local",
+    "build": "npx nitropack build",
+    "build:dev": "APP_ENV=dev npx nitropack build",
+    "preview": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "nitropack": "latest",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "firebase-admin": "^11.7.0",
+    "firebase-functions": "^4.3.1"
+  }
+}

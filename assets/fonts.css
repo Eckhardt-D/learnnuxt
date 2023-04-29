@@ -42,3 +42,17 @@
   font-style: italic;
   font-display: swap;
 }
+
+@font-face {
+  ascent-override: 80.7734375%;
+  descent-override: 14.4140625%;
+  font-family: 'Roboto Condensed override';
+  font-weight: bold;
+  line-gap-override: 0%;
+  size-adjust: 88.56%;
+  src: local("Arimo"), local("Segoe UI"), local("Roboto"), local("Helvetica Neue"), local("Arial"), local("Noto Sans")
+}
+
+:root {
+  font-family: 'Roboto Condensed', 'Roboto Condensed override' !important;
+}

@@ -48,7 +48,7 @@ watch(route, () => {
         </section>
       </aside>
       
-      <article class="flex-grow my-5 px-[15px] max-w-4xl  prose lg:prose-xl prose-invert mb-20">
+      <article class="flex-grow my-5 px-[15px] max-w-4xl  prose lg:prose-xl prose-invert mb-20  overflow-hidden">
         <slot />
 
         

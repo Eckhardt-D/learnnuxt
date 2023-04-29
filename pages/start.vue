@@ -30,26 +30,10 @@ const registerForm = ref<null | HTMLFormElement>(null);
 const register = async () => {
   if (registerForm.value?.checkValidity()) {
     loading.value = true;
-    const response = await fetch("/api/earlybird", {
-      method: "POST",
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        email: email.value,
-      })
-    })
-    .then(response => response.json())
-    .catch((error) => {
-      return {
-        data: null,
-        error: {
-          reason: (error as Error).message,
-          message: 'Could not register your email, please try again.'
-        }
-      }
-    })
+    const callable = useRoutedCallable('/earlybird');
+    const response = await callable({email: email.value});
 
+    // @ts-ignore
     if (response.data?.success) {
       window.usermaven("track", "earlybird_signup", {
         email: email.value,
@@ -60,7 +44,8 @@ const register = async () => {
       return;
     }
 
-    error.value = response.error?.message ?? null;
+    // @ts-ignore
+    error.value = response.data?.error?.message ?? null;
     loading.value = false;
   }
 }

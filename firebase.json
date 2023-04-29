@@ -1,21 +1,20 @@
 {
   "functions": {
-    "source": ".output/server"
+    "source": "functions/.output/server"
   },
   "hosting": {
     "public": ".output/public",
     "cleanUrls": true,
     "headers": [
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|webp|ttf)",
+        "source": "**/*.@(jpg|jpeg|gif|png|webp|ttf|json)",
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "max-age=7200"
+            "value": "max-age=86400"
           }
         ]
       }
-    ],
-    "rewrites": [{ "source": "**", "function": "server" }]
+    ]
   }
 }

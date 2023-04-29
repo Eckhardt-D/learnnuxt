@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  font-family: 'Roboto Condensed';
   --gradient-color-1: rgb(0 255 87);
   --gradient-color-2: rgb(139 217 255);
 }
