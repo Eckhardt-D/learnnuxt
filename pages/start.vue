@@ -59,7 +59,12 @@ const register = async () => {
     <p class="max-w-4xl">
       The project content is still under production. Here you can sign up to receive an email once the early-release version is ready.
       The great news is, if you sign up within the early-release version - you will get <span class="text-[var(--gradient-color-1)]">75%</span>
-      off with a custom coupon in your mailbox and still get access for life!
+      off with a custom coupon in your mailbox and still get access for life! In the meantime, you can always check out the <nuxt-link
+        to="/free/introduction/setting-up-your-computer"
+        class="text-[var(--gradient-color-1)]"
+      >
+        free stuff.
+      </nuxt-link>
     </p>
 
     <h2 class="font-bold text-2xl mt-14 mb-2">

@@ -58,9 +58,9 @@ const testimonials = [
         </button>
         <nuxt-link
           to="/free/introduction/setting-up-your-computer"
-          class="text-sm mx-auto"
+          class="text-sm mx-auto underline"
         >
-          Free samples
+          or read free samples
         </nuxt-link>
       </section>
 

@@ -50,7 +50,12 @@
   font-weight: bold;
   line-gap-override: 0%;
   size-adjust: 88.56%;
-  src: local("Arimo"), local("Segoe UI"), local("Roboto"), local("Helvetica Neue"), local("Arial"), local("Noto Sans")
+  src: local("Arimo"),
+    local("Segoe UI"),
+    local("Roboto"),
+    local("Helvetica Neue"),
+    local("Arial"),
+    local("Noto Sans");
 }
 
 :root {
