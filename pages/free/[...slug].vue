@@ -15,19 +15,19 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      textContent: JSON.stringify({
+      innerHTML: JSON.stringify({
         "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": data.value?.title || 'Learn Nuxt Course',
-      "image": [
-        "https://learnnuxt.co/images/social_learn_nuxt-min.webp",
-       ],
-      "author": [{
-          "@type": "Person",
-          "name": "Eckhardt Dreyer",
-          "url": "https://eckhardt.dreyer.com.na"
-        }]
-      })
+        "@type": "Article",
+        "headline": data.value?.title || 'Learn Nuxt Course',
+        "image": [
+          "https://learnnuxt.co/images/social_learn_nuxt-min.webp",
+        ],
+        "author": [{
+            "@type": "Person",
+            "name": "Eckhardt Dreyer",
+            "url": "https://eckhardt.dreyer.com.na"
+          }]
+      }),
     }
   ]
 })
