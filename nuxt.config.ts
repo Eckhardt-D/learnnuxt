@@ -58,7 +58,7 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/tailwind.css", "~/assets/fonts.css"],
-  modules: ["@nuxt/content"],
+  modules: ["@nuxt/content", "nuxt-simple-sitemap"],
   postcss: {
     plugins: {
       autoprefixer: {},
@@ -69,5 +69,8 @@ export default defineNuxtConfig({
     public: {
       isDevelopment: process.env.APP_ENV === "dev",
     },
+  },
+  sitemap: {
+    siteUrl: "https://learnnuxt.co",
   },
 });

@@ -2,29 +2,55 @@
 const route = useRoute();
 const showPagination = ref(false);
 
-const { data, pending, refresh, error } = await useLazyAsyncData(async () => {
+const { data, pending, refresh, error } = await useAsyncData(async () => {
   return await queryContent(useRoute().path).findOne();
 });
 
-const { data: paginationData, pending: paginationPending, refresh: refreshPagination } = await useLazyAsyncData(async () => {
+useSeo({
+  title: data.value?.title,
+  description: data.value?.description
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      textContent: JSON.stringify({
+        "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": data.value?.title || 'Learn Nuxt Course',
+      "image": [
+        "https://learnnuxt.co/images/social_learn_nuxt-min.webp",
+       ],
+      "author": [{
+          "@type": "Person",
+          "name": "Eckhardt Dreyer",
+          "url": "https://eckhardt.dreyer.com.na"
+        }]
+      })
+    }
+  ]
+})
+
+const { data: paginationData, pending: paginationPending, refresh: refreshPagination } = await useAsyncData(async () => {
   return await queryContent('/free')
     .only(['_path', 'title'])
     .findSurround(route.path)
 });
 
-watch(() => data.value, (val) => {
-  if (val) {
-    setTimeout(() => {
-      showPagination.value = true
-    }, 500)
-  }
+watch(() => data.value, () => {
+  setTimeout(() => {
+    showPagination.value = true
+  }, 500)
 })
 
 onMounted(() => {
   watch(route, () => {
-    showPagination.value = false;
-    refresh();
-    refreshPagination();
+    if (data.value?._path !== useRoute().path) {
+      showPagination.value = false;
+      refresh();
+      refreshPagination();
+    }
   }, {deep: true, immediate: true})
 })
 </script>
