@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 const route = useRoute();
-const showPagination = ref(false);
 
 const { data, pending, refresh, error } = await useAsyncData(async () => {
   return await queryContent(useRoute().path).findOne();
@@ -38,16 +37,9 @@ const { data: paginationData, pending: paginationPending, refresh: refreshPagina
     .findSurround(route.path)
 });
 
-watch(() => data.value, () => {
-  setTimeout(() => {
-    showPagination.value = true
-  }, 500)
-})
-
 onMounted(() => {
   watch(route, () => {
     if (data.value?._path !== useRoute().path) {
-      showPagination.value = false;
       refresh();
       refreshPagination();
     }
@@ -74,7 +66,7 @@ onMounted(() => {
       <ContentRendererMarkdown :value="data" />
 
       <div
-        v-if="showPagination && !pending && !paginationPending && data && paginationData && paginationData.length >= 1"
+        v-if="!pending && !paginationPending && data && paginationData && paginationData.length >= 1"
         class="flex align-center justify-between gap-5 mt-20"
       >
         <nuxt-link
@@ -84,7 +76,7 @@ onMounted(() => {
         >
           &larr; previous
           <br>
-          <span class="text-slate-600">
+          <span class="text-slate-400 text-sm">
             {{ paginationData[0].title }}
           </span>
         </nuxt-link>
@@ -96,14 +88,14 @@ onMounted(() => {
         >
           Next &rarr;
           <br>
-          <span class="text-slate-600">
+          <span class="text-slate-400 text-sm">
             {{ paginationData[1].title }}
           </span>
         </nuxt-link>
       </div>
 
       <div
-        v-if="showPagination && !pending && !paginationPending && data && paginationData && paginationData.length >= 1"
+        v-if="!pending && !paginationPending && data && paginationData && paginationData.length >= 1"
         class="mx-auto text-center my-20"
       >
         <p>✨ Thanks for checking out the free stuff! Browse through the <nuxt-link
