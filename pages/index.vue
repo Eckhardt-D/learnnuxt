@@ -40,8 +40,11 @@ const testimonials = [
 <template>
   <main>
     <div class="container mx-auto px-[18px]">
-      <section class=" mt-[9%] max-w-4xl mx-auto text-center">
-        <h1 class="text-5xl sm:text-7xl font-bold leading-tight mb-10">
+      <section class="mt-[9%] max-w-4xl mx-auto text-center">
+        <!-- <h1 class="absolute text-5xl sm:text-7xl font-bold font-['Roboto_Condensed_override'] leading-tight mb-10">
+          Learn <span class="text-colorful">modern Nuxt</span> from beginner to advanced
+        </h1> -->
+        <h1 class=" text-5xl sm:text-7xl font-bold leading-tight mb-10">
           Learn <span class="text-colorful">modern Nuxt</span> from beginner to advanced
         </h1>
         <p class=" leading-normal text-lg font-medium mb-10">

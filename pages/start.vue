@@ -53,7 +53,7 @@ const register = async () => {
 
 <template>
   <div class="max-w-6xl mx-auto px-4 mb-40">
-    <h1 class="text-5xl md:text-7xl font-bold my-10">
+    <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold my-10">
       <span class="text-colorful">Thank you</span> for showing interest!
     </h1>
     <p class="max-w-4xl">
