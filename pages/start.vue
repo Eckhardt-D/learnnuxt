@@ -84,7 +84,7 @@ const register = async () => {
         required
       >
       <button
-        class="btn-colorful w-full sm:w-[144px]"
+        class="btn-colorful w-full sm:w-[160px]"
         :class="loading && '!bg-gray-700'"
         :disabled="loading"
         @click="register"
