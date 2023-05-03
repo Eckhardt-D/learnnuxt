@@ -16,6 +16,7 @@ onMounted(() => {
         forceEmbedLayout: true,
         openFile: props.file,
         height: 750,
+        clickToLoad: true,
       }
     );
   }
