@@ -15,7 +15,7 @@ onMounted(() => {
       {
         forceEmbedLayout: true,
         openFile: props.file,
-        height: 500,
+        height: 750,
       }
     );
   }
@@ -23,16 +23,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <div
-    ref="embed"
-    class="embed"
-  />
+  <div class="embed">
+    <div
+      ref="embed"
+      class="embed"
+    />
+  </div>
 </template>
 
 <style scoped>
 .embed {
   width: 100%;
-  aspect-ratio: 4/5;
+  height: 750px;
   background-color: rgba(255,255,255,0.1);
   background-blend-mode: difference;
   border-radius: 1%;
