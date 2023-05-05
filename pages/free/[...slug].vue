@@ -98,12 +98,12 @@ onMounted(() => {
         v-if="!pending && !paginationPending && data && paginationData && paginationData.length >= 1"
         class="mx-auto text-center my-20"
       >
-        <p>✨ Thanks for checking out the free stuff! Browse through the <nuxt-link
-          to="/outline"
-          class="text-[var(--gradient-color-1)]"
-        >
-          outline
-        </nuxt-link> to see if there might be something that interests you enough to sign up.</p>
+        <p>✨ Thanks for checking out the free stuff! Browse through the
+          <nuxt-link
+            to="/outline"
+            class="text-[var(--gradient-color-1)]"
+          >outline</nuxt-link>
+          to see if there might be something that interests you enough to sign up.</p>
       </div>
     </ContentRenderer>
 
