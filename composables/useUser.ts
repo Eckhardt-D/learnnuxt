@@ -43,7 +43,7 @@ export default () => {
       return user.value
     }
 
-    user.value = await new Promise((resolve, reject) => {
+    user.value = await new Promise((resolve) => {
       onAuthStateChanged($auth, (user) => {
         console.log(user)
         return resolve(user);
