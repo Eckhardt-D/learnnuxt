@@ -7,6 +7,7 @@ useSeo();
     <Navigation />
     <slot />
     <Footer v-once />
+    <LazySnackbar />
   </main>
 </template>
 
