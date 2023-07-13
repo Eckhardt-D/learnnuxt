@@ -45,7 +45,9 @@ export default () => {
 
     user.value = await new Promise((resolve) => {
       onAuthStateChanged($auth, (user) => {
-        console.log(user)
+        if (user === null) {
+          useCookie('learn_nuxt_token_v1').value = null;
+        }
         return resolve(user);
       })
     })
