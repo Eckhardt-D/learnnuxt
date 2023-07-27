@@ -8,10 +8,6 @@ config({
 
 export default defineNitroConfig({
   preset: "firebase",
-  replace: {
-    "functions.https.onRequest":
-      "functions.runWith({ minInstances: 1 }).https.onRequest",
-  },
   runtimeConfig: {
     isDevelopment: process.env.APP_ENV === "dev",
     serviceAccountPath:
