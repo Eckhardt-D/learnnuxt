@@ -4,7 +4,7 @@
     "lint": "eslint",
     "build": "concurrently \"nuxt generate\" \"cd functions && pnpm build\"",
     "build:dev": "concurrently \"nuxt generate\" \"cd functions && pnpm build:dev\"",
-    "deploy": "pnpm run build && firebase deploy",
+    "deploy": "APP_ENV=production pnpm run build && firebase deploy",
     "dev": "cd functions && pnpm build:dev && cd .. && concurrently \"firebase emulators:start --only functions,firestore,auth\" \"APP_ENV=dev nuxt dev\"",
     "generate": "nuxt generate",
     "preview": "nuxt preview"

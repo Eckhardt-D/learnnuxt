@@ -39,7 +39,7 @@ const app =
   });
 
 export default defineNuxtPlugin(() => {
-  const { public: isDevelopment } = useRuntimeConfig();
+  const { public: {isDevelopment} } = useRuntimeConfig();
   const functions = getFunctions(app);
   const firestore = getFirestore(app);
   const auth = getAuth(app);
