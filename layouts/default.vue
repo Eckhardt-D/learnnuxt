@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { CircleStackIcon } from "@heroicons/vue/24/outline/index"
 const route = useRoute()
-const _q = route.path.startsWith('learn') ? '/learn' : '/free';
+const _q = route.path.startsWith('/learn') ? '/learn' : '/free';
 const query = queryContent(_q)
 const tocOpen = ref(false);
 useSeo();

@@ -2,6 +2,14 @@
   "functions": {
     "source": "functions/.output/server"
   },
+  "emulators": {
+    "firestore": {
+      "port": "8080"
+    },
+    "auth": {
+      "port": "9099"
+    }
+  },
   "hosting": {
     "public": ".output/public",
     "cleanUrls": true,

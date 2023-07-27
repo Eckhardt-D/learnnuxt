@@ -1,6 +1,12 @@
 <script lang="ts" setup>
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline/index"
+const userStore = useUser();
 const menuOpen = ref(false);
+
+const logout = () => {
+  userStore.logout()
+  menuOpen.value = false
+}
 </script>
 
 <template>
@@ -15,39 +21,38 @@ const menuOpen = ref(false);
     </nuxt-link>
     <ul class="hidden md:flex items-center gap-10 ">
       <li v-if="$route.path !== '/'">
-        <nuxt-link
-          to="/"
-        >
+        <nuxt-link to="/">
           Home
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link
-          to="/about"
-        >
+        <nuxt-link to="/about">
           About the author
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link
-          to="/outline"
-        >
+        <nuxt-link to="/outline">
           Course outline
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link
-          to="/pricing"
-        >
+        <nuxt-link to="/pricing">
           Pricing
         </nuxt-link>
       </li>
       <li class="border py-2 px-5 rounded border-[var(--gradient-color-1)] font-bold">
         <nuxt-link
-          to="/start"
+          v-if="!userStore.user.value"
+          to="/account/login"
         >
           Login
         </nuxt-link>
+        <button
+          v-else
+          @click="userStore.logout"
+        >
+          Logout
+        </button>
       </li>
     </ul>
 
@@ -63,11 +68,9 @@ const menuOpen = ref(false);
     >
       <XMarkIcon
         class="w-6 h-6 absolute text-white top-12 right-6"
-        @click="menuOpen=false"
+        @click="menuOpen = false"
       />
-      <ul
-        class="flex flex-col gap-10 items-center pt-20 p-5"
-      >
+      <ul class="flex flex-col gap-10 items-center pt-20 p-5">
         <img
           width="50"
           height="50"
@@ -77,7 +80,7 @@ const menuOpen = ref(false);
         <li v-if="$route.path !== '/'">
           <nuxt-link
             to="/"
-            @click="menuOpen=false"
+            @click="menuOpen = false"
           >
             Home
           </nuxt-link>
@@ -85,7 +88,7 @@ const menuOpen = ref(false);
         <li>
           <nuxt-link
             to="/about"
-            @click="menuOpen=false"
+            @click="menuOpen = false"
           >
             About the author
           </nuxt-link>
@@ -93,7 +96,7 @@ const menuOpen = ref(false);
         <li>
           <nuxt-link
             to="/outline"
-            @click="menuOpen=false"
+            @click="menuOpen = false"
           >
             Course outline
           </nuxt-link>
@@ -101,18 +104,25 @@ const menuOpen = ref(false);
         <li>
           <nuxt-link
             to="/pricing"
-            @click="menuOpen=false"
+            @click="menuOpen = false"
           >
             Pricing
           </nuxt-link>
         </li>
         <li class="border py-2 px-5 rounded border-[var(--gradient-color-1)] font-bold">
           <nuxt-link
-            to="/start"
-            @click="menuOpen=false"
+            v-if="!userStore.user.value"
+            to="/account/login"
+            @click="menuOpen = false"
           >
             Login
           </nuxt-link>
+          <button
+            v-else
+            @click="logout"
+          >
+            Logout
+          </button>
         </li>
       </ul>
     </div>
