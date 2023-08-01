@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         },
         {
           src: "https://t.usermaven.com/lib.js",
-          "data-key": "UM87fyjQWD",
+          "data-key": "UM1zSQHtsL",
           "data-tracking-host": "https://events.usermaven.com",
           "data-autocapture": "true",
           "data-privacy-policy": "strict",
