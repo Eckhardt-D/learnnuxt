@@ -55,7 +55,7 @@ const testimonials = [
         </p>
         <button
           class="btn-colorful mx-auto mb-5"
-          @click="$router.push('/start')"
+          @click="$router.push('/account/create')"
         >
           Start learning &rarr;
         </button>
@@ -136,7 +136,7 @@ const testimonials = [
         </h1>
         <button
           class="btn-colorful mx-auto mt-10"
-          @click="$router.push('/start')"
+          @click="$router.push('/account/create')"
         >
           Start learning &rarr;
         </button>

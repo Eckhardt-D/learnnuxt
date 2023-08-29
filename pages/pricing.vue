@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import { CheckIcon } from '@heroicons/vue/20/solid/index'
 
+const userStore = useUser();
+
 definePageMeta({
   layout: "marketing"
 });
@@ -65,15 +67,17 @@ const includedFeatures = [
                 <span class="text-5xl font-bold tracking-tight text-white">$49</span>
                 <span class="text-sm font-semibold leading-6 tracking-wide text-white">USD</span>
               </p>
-              <!-- <nuxt-link
-                to="/start"
-                class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Get access
-              </nuxt-link> -->
               <nuxt-link
+                v-if="userStore.user.value"
                 class="btn-colorful mt-6 !h-12"
-                to="/start"
+                to="/subscribe"
+              >
+                Get access &rarr;
+              </nuxt-link>
+              <nuxt-link
+                v-else
+                class="btn-colorful mt-6 !h-12"
+                to="/account/create?continue=/subscribe"
               >
                 Get access &rarr;
               </nuxt-link>

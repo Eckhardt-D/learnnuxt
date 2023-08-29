@@ -2,6 +2,7 @@
 
 definePageMeta({
   layout: "marketing",
+  middleware: "loggedin"
 });
 
 const userStore = useUser();
@@ -85,7 +86,7 @@ const register = async () => {
       </section>
       <p class="mt-4">Don't have an account? <nuxt-link
         class="text-[var(--gradient-color-1)]"
-        to="/account/login"
+        to="/account/create"
       >
         Register
       </nuxt-link></p>

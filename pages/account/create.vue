@@ -2,10 +2,12 @@
 
 definePageMeta({
   layout: "marketing",
+  middleware: "loggedin",
 });
 
 const userStore = useUser();
 const snackbar = useSnackbar();
+const route = useRoute();
 
 const userCreateForm = ref<HTMLFormElement>();
 
@@ -22,10 +24,11 @@ const register = async () => {
       return;
     }
 
+    const continueUrl = route.query.continue as string | undefined;
     try {
       await userStore.create(details.email, details.password);
       snackbar.success('Success!')
-      useRouter().push('/learn/introduction/setting-up-your-computer')
+      useRouter().push(continueUrl || '/learn/introduction/setting-up-your-computer')
     } catch (err) {
       snackbar.error((err as Error).message)
     }

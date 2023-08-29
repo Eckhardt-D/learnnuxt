@@ -68,6 +68,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       isDevelopment: process.env.APP_ENV === "dev",
+      lifetimeId: process.env.LIFETIME_ID,
+      lifetimeIdLive: process.env.LIFETIME_ID_LIVE,
     },
   },
   sitemap: {
