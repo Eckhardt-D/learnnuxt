@@ -1,8 +1,6 @@
 <script lang="ts" setup>
 import { CircleStackIcon } from "@heroicons/vue/24/outline/index"
-const route = useRoute()
-const _q = route.path.startsWith('/learn') ? '/learn' : '/free';
-const query = queryContent(_q)
+const query = queryContent('/free')
 const tocOpen = ref(false);
 useSeo();
 </script>
@@ -24,18 +22,6 @@ useSeo();
             :navigation="navigation?.[0]?.children"
           />
         </ContentNavigation>
-
-        <section
-          v-if="$route.path.startsWith('/free')"
-          class="text-xs mt-20"
-        >
-          Want more? <nuxt-link
-            to="/pricing"
-            class="text-[var(--gradient-color-1)]"
-          >
-            Subscribe &rarr;
-          </nuxt-link>
-        </section>
       </aside>
 
       <aside class="md:hidden w-[300px] flex-shrink-0 p-5">

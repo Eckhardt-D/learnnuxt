@@ -1,12 +1,6 @@
 <script lang="ts" setup>
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline/index"
-const userStore = useUser();
 const menuOpen = ref(false);
-
-const logout = () => {
-  userStore.logout()
-  menuOpen.value = false
-}
 </script>
 
 <template>
@@ -39,20 +33,6 @@ const logout = () => {
         <nuxt-link to="/pricing">
           Pricing
         </nuxt-link>
-      </li>
-      <li class="border py-2 px-5 rounded border-[var(--gradient-color-1)] font-bold">
-        <nuxt-link
-          v-if="!userStore.user.value"
-          to="/account/login"
-        >
-          Login
-        </nuxt-link>
-        <button
-          v-else
-          @click="userStore.logout"
-        >
-          Logout
-        </button>
       </li>
     </ul>
 
@@ -108,21 +88,6 @@ const logout = () => {
           >
             Pricing
           </nuxt-link>
-        </li>
-        <li class="border py-2 px-5 rounded border-[var(--gradient-color-1)] font-bold">
-          <nuxt-link
-            v-if="!userStore.user.value"
-            to="/account/login"
-            @click="menuOpen = false"
-          >
-            Login
-          </nuxt-link>
-          <button
-            v-else
-            @click="logout"
-          >
-            Logout
-          </button>
         </li>
       </ul>
     </div>
