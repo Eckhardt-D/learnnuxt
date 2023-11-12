@@ -17,24 +17,6 @@ const features = [
     body: 'The Learn Nuxt project will be maintained indefinitely and continuously updated with fresh information. This may be new Nuxt features, more advanced topics or another project.'
   }
 ];
-
-const testimonials = [
-  {
-    name: 'Linda',
-    avatar: '/testimonials/linda_new.webp',
-    comment: 'I have been using Vue for a while and understand it pretty well, I have been looking at how to get into Nuxt. I\'m not disappointed that I chose this website, I have learned a ton.'
-  },
-  {
-    name: 'Abel',
-    avatar: '/testimonials/abel_new.webp',
-    comment: 'I recently finished a great vanilla JavaScript course and decided to make Nuxt my first framework-based skill in JS. I am not through the course yet but so far so good!'
-  },
-  {
-    name: 'Claire',
-    avatar: '/testimonials/claire_new.webp',
-    comment: 'I\'m relatively new to web development, but I am a fast learner especially if the teaching is concise. I was relieved about how fluent I could understand this content.'
-  }
-]
 </script>
 
 <template>
@@ -53,17 +35,11 @@ const testimonials = [
           examples and interactive projects. Whether you read it front to back or
           just use it as a reference, it's sure to improve your Nuxt skills.
         </p>
-        <button
-          class="btn-colorful mx-auto mb-5"
-          @click="$router.push('/account/create')"
+        <nuxt-link
+          class="max-w-xs btn-colorful mx-auto mb-5"
+          @click="$router.push('/free/introduction/setting-up-your-computer')"
         >
           Start learning &rarr;
-        </button>
-        <nuxt-link
-          to="/free/introduction/setting-up-your-computer"
-          class="text-sm mx-auto underline"
-        >
-          or read free samples
         </nuxt-link>
       </section>
 
@@ -93,41 +69,25 @@ const testimonials = [
 
       <section class="my-20">
         <h1 class="text-3xl md:text-5xl font-bold text-center">
-          What others are saying
+          Free and Open 
         </h1>
 
-        <div class="w-full flex items-center justify-center flex-wrap gap-14 my-14">
-          <div
-            v-for="testimonial in testimonials"
-            :key="testimonial.name"
-            class="my-5"
-          >
-            <div class="flex items-center justify-center gap-5 w-80 max-h-60 overflow-hidden">
-              <img
-                width="64"
-                height="61"
-                :src="testimonial.avatar"
-                :alt="testimonial.name + '\'s avatar'"
-                class="rounded-[50%]"
-              >
-              <p>
-                {{ testimonial.comment }}
-                - <span class="font-bold">{{ testimonial.name }}</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mt-14 mb-20 text-center">
-        <!-- For later -->
-        <p v-if="false">
-          Are you busy with the course and wouldn't mind taking a second to leave a testimonial? <a
-            class="text-[var(--gradient-color-1)] und
-          "
-            href="#"
-          >Follow this link</a> to do so.
+        <p class="mt-10 font-medium text-center tracking-wider">
+          Since November  12, 2023. Learn Nuxt is a free and open source site.
+          Making it possible for Nuxt'ers all around the world to share valuable content with a simple GitHub Pull Request.
+          This decision was made because Nuxt already provides such a great amount of information through their own work, 
+          making this a paid site did not feel like the way to go.
         </p>
+
+        <div class="text-center mt-10">
+          <nuxt-link
+            to="https://github.com/Eckhardt-D/learnnuxt.git"
+            class="mx-auto"
+          >
+            GitHub Repo &rarr;
+          </nuxt-link>
+        </div>
+
       </section>
 
       <section class="my-10 mb-16">
@@ -136,7 +96,7 @@ const testimonials = [
         </h1>
         <button
           class="btn-colorful mx-auto mt-10"
-          @click="$router.push('/account/create')"
+          @click="$router.push('/free/introduction/setting-up-your-computer')"
         >
           Start learning &rarr;
         </button>

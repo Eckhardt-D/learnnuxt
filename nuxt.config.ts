@@ -20,6 +20,11 @@ export default defineNuxtConfig({
           type: "image/svg+xml",
         },
       ],
+      /**
+        * Usermaven is a privacy-first, no-cookie / tracking
+        * analytics platform.
+        * @link https://usermaven.com
+        * */
       script: [
         {
           src: "/js/um.js",
@@ -44,11 +49,6 @@ export default defineNuxtConfig({
       },
     },
     sources: {
-      learn: {
-        prefix: "/learn",
-        driver: "fs",
-        base: resolve(__dirname, "content-paid"),
-      },
       free: {
         prefix: "/free",
         driver: "fs",
@@ -62,13 +62,6 @@ export default defineNuxtConfig({
     plugins: {
       autoprefixer: {},
       tailwindcss: {},
-    },
-  },
-  runtimeConfig: {
-    public: {
-      isDevelopment: process.env.APP_ENV === "dev",
-      lifetimeId: process.env.LIFETIME_ID,
-      lifetimeIdLive: process.env.LIFETIME_ID_LIVE,
     },
   },
   sitemap: {

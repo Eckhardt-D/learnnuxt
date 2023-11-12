@@ -34,7 +34,6 @@
   "dependencies": {
     "@stackblitz/sdk": "^1.9.0",
     "firebase": "^9.21.0",
-    "stripe": "^13.3.0",
     "zod": "^3.21.4"
   }
 }
