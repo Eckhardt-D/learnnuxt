@@ -15,7 +15,7 @@
     "cleanUrls": true,
     "headers": [
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|webp|ttf)",
+        "source": "**/*.@(jpg|jpeg|gif|png|webp|ttf|json)",
         "headers": [
           {
             "key": "Cache-Control",

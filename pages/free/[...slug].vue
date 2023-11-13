@@ -1,8 +1,9 @@
 <script lang="ts" setup>
+import {withoutTrailingSlash} from 'ufo'
 const route = useRoute();
 
-const { data, pending, refresh, error } = await useAsyncData(async () => {
-  return await queryContent(useRoute().path).findOne();
+const { data, pending, error } = await useAsyncData(route.path, async () => {
+  return queryContent(route.path).findOne();
 });
 
 useSeo({
@@ -31,20 +32,11 @@ useHead({
   ]
 })
 
-const { data: paginationData, pending: paginationPending, refresh: refreshPagination } = await useAsyncData(async () => {
+const { data: paginationData, pending: paginationPending } = await useAsyncData(`${route.path}-surround`, async () => {
   return await queryContent('/free')
     .only(['_path', 'title'])
-    .findSurround(route.path)
+    .findSurround(withoutTrailingSlash(route.path))
 });
-
-onMounted(() => {
-  watch(route, () => {
-    if (data.value?._path !== useRoute().path) {
-      refresh();
-      refreshPagination();
-    }
-  }, {deep: true, immediate: true})
-})
 </script>
 
 <template>
@@ -92,18 +84,6 @@ onMounted(() => {
             {{ paginationData[1].title }}
           </span>
         </nuxt-link>
-      </div>
-
-      <div
-        v-if="!pending && !paginationPending && data && paginationData && paginationData.length >= 1"
-        class="mx-auto text-center my-20"
-      >
-        <p>✨ Thanks for checking out the free stuff! Browse through the
-          <nuxt-link
-            to="/outline"
-            class="text-[var(--gradient-color-1)]"
-          >outline</nuxt-link>
-          to see if there might be something that interests you enough to sign up.</p>
       </div>
     </ContentRenderer>
 
